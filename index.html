@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lernjob: Adverbiale und Adverbialsätze</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='13' cy='13' r='8' fill='none' stroke='%231e5a6e' stroke-width='4'/%3E%3Cpath d='M19 19l9 9' stroke='%231e5a6e' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app"><p class="laden">Detektei wird geladen …</p></div>
+<script src="js/config.js"></script>
+<script>
+  /* Supabase nur laden, wenn eingerichtet – sonst Demo-Modus ohne Internetverbindung zu Fremddiensten */
+  if ((window.DETEKTEI_CONFIG || {}).supabaseUrl) document.write('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"><\/script>');
+  else document.write('<script src="js/test-schluessel.js"><\/script><script src="js/demo-seed.js"><\/script>');
+</script>
+<script src="js/content-base.js"></script>
+<script src="js/content-akte1.js"></script>
+<script src="js/content-akte2.js"></script>
+<script src="js/content-akte3.js"></script>
+<script src="js/content-akte45.js"></script>
+<script src="js/content-abschluss.js"></script>
+<script src="js/content-extra.js"></script>
+<script src="js/content-seiten.js"></script>
+<script src="js/test-fragen.js"></script>
+<script src="js/store.js"></script>
+<script src="js/core.js"></script>
+<script src="js/erklaer.js"></script>
+<script src="js/visuals.js"></script>
+<script src="js/visuals2.js"></script>
+<script src="js/student.js"></script>
+<script src="js/teacher.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
