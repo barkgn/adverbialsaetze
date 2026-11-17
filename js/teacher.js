@@ -74,8 +74,8 @@
       const [inv, lk] = await Promise.all([store.listInvites(), store.listTeachers()]);
       box.append(h('p', null, 'Erzeuge für jede Kollegin und jeden Kollegen einen Einladungscode. Damit registrieren sie sich selbst und sehen nur ihre eigenen Klassen.'),
         h('button', { class: 'btn primaer', onclick: async () => { try { const c = await store.createInvite(); await C.info('Neuer Einladungscode: **' + c + '**'); T.zeigeStart(); } catch (e) { fehler(e); } } }, 'Einladungscode erzeugen'),
-        inv.length ? h('table', { class: 'kt-tab' }, h('thead', null, h('tr', null, h('th', null, 'Code'), h('th', null, 'Status'))), h('tbody', null, inv.map((i) => h('tr', null, h('td', null, h('code', null, i.code)), h('td', null, i.used_by ? 'eingelöst' : 'offen'))))) : null,
-        h('h3', null, 'Lehrkräfte'), h('ul', null, lk.map((t) => h('li', null, `${t.name || '–'} (${t.email || ''})${t.is_admin ? ' · Admin' : ''}`))));
+        inv.length ? h('table', { class: 'kt-tab' }, h('thead', null, h('tr', null, h('th', null, 'Code'), h('th', null, 'Status'))), h('tbody', null, inv.map((i) => h('tr', null, h('td', null, h('code', null, i.code)), h('td', null, i.used_by ? 'eingelöst' : 'offen'))))) : '',
+        h('h3', null, 'Lehrkräfte'), h('ul', null, lk.map((t) => h('li', null, `${t.name ? t.name + ' (' + (t.email || '') + ')' : t.email || ''}${t.is_admin ? ' · Admin' : ''}`))));
     } catch (e) { box.append(h('p', { class: 'schlecht' }, e.message)); }
     return box;
   }
