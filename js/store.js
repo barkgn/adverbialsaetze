@@ -114,7 +114,7 @@
       return t;
     }
     async teacherSignUp(email, pw, name, invite) {
-      const { data, error } = await this.sb.auth.signUp({ email, password: pw }); if (error) throw new Error(error.message);
+      const { data, error } = await this.sb.auth.signUp({ email, password: pw, options: { emailRedirectTo: location.origin + location.pathname } }); if (error) throw new Error(error.message);
       if (!data.session) return { confirm: true };
       if (invite) await this.rpc('redeem_invite', { p_code: invite.trim().toUpperCase(), p_name: name || '' });
       else await this.rpc('claim_admin', {});
