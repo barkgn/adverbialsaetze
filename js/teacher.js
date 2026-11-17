@@ -143,7 +143,7 @@
         h('button', { class: 'btn text gefahr', onclick: async () => { if (await C.frage(`Klasse ${k.name} mit allen Codes und Daten löschen?`)) { await store.deleteClass(k.id); T.zeigeStart(); } } }, 'Klasse löschen')));
   }
   function kaertchen(k, schueler) {
-    const nm = namen(); const url = location.origin + location.pathname;
+    const nm = namen(); const url = ((window.DETEKTEI_CONFIG || {}).kurzlink || location.origin + location.pathname).replace(/^https?:\/\//, '').replace(/\/$/, '');
     root.innerHTML = '';
     root.append(h('div', { class: 'kaertchen-seite' }, h('div', { class: 'aktionen nodruck' }, h('button', { class: 'btn', onclick: () => T.zeigeKlasse(k, 'codes') }, '← Zurück'), h('button', { class: 'btn primaer', onclick: () => C.drucken() }, 'Drucken')),
       h('div', { class: 'kaertchen' }, schueler.map((s) => h('div', { class: 'kaertchen-k' }, h('p', { class: 'k-titel' }, 'Lernjob Adverbialsätze · Deutsch 7'), h('p', { class: 'k-name' }, nm[s.code] || ' '), h('p', { class: 'k-code' }, s.code), h('p', { class: 'k-url' }, url), h('p', { class: 'k-hilfe' }, 'Seite öffnen → „Ich bin Schülerin / Schüler“ → Code eingeben. Bewahre den Code gut auf.'))))));
