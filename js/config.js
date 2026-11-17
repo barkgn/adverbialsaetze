@@ -4,4 +4,6 @@
 window.DETEKTEI_CONFIG = {
   supabaseUrl: 'https://mdyilzfqzmrkbgqafemk.supabase.co',
   supabaseAnonKey: 'sb_publishable_C6YLxYO8oTHIAkw1bQaTvg_mPi1gMUf',
+  // Kurzlink für die Code-Kärtchen (leer = Adresse der App)
+  kurzlink: 'https://kgnlink.de/d7adv',
 };
